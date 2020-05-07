@@ -11,7 +11,7 @@ This project is intended to be a helpful "bootstrapped" kickstarter for all inte
 Run the following command in your terminal
 
 ```
-npm install --save @mozilla-factor/core
+npm install --save @mozilla/factor-ui
 ```
 
 ## Templates
@@ -37,8 +37,8 @@ In component import
 </template>
 
 <script>
-import { FactorBlockTemplate } from '@mozilla-factor/core';
-import '@mozilla-factor/core/dist/factor.css';
+import { FactorBlockTemplate } from '@mozilla/factor-ui';
+import '@mozilla/factor-ui/dist/factor.css';
 
 export default {
   components: {
