@@ -1,0 +1,38 @@
+/**
+ * Styles for Grid Block Layout
+ */
+
+// Grid container
+@mixin gridContainer() {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 1em;
+  width: 74em;
+  margin: 1em auto;
+}
+
+// Full width panel
+@mixin fullGridWidth() {
+  grid-column: 1/6 span;
+}
+
+// Half width panel
+@mixin halfGridWidth($start) {
+  grid-column-start: $start;
+  grid-column-end: calc(#{$start} + 3);
+}
+
+// Third width panel
+@mixin thirdGridWidth($start) {
+  grid-column-start: $start;
+  grid-column-end: calc(#{$start} + 2);
+}
+
+// Block layout
+.b-l {
+  @include gridContainer;
+
+  & #{&}__panel--full {
+    @include fullGridWidth;
+  }
+}

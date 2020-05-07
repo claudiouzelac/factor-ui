@@ -1,0 +1,64 @@
+{
+  "name": "@mozilla/factor-ui",
+  "version": "0.0.1",
+  "description": "Templates and components to guide internal applications designs to Mozilla",
+  "main": "dist/factor.umd.js",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build:web": "vue-cli-service build",
+    "test:unit": "vue-cli-service test:unit",
+    "lint": "vue-cli-service lint",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:wc": "vue-cli-service build --target wc --name factor-components 'src/components/*.vue'",
+    "build": "vue-cli-service build --target lib --name factor src/index.js"
+  },
+  "dependencies": {
+    "core-js": "^3.6.4",
+    "image-webpack-loader": "^6.0.0",
+    "svg-sprite-loader": "^4.2.7",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.3.1",
+    "@vue/cli-plugin-eslint": "~4.3.1",
+    "@vue/cli-plugin-unit-jest": "~4.3.1",
+    "@vue/cli-service": "~4.3.1",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/test-utils": "1.0.0-beta.31",
+    "babel-eslint": "^10.1.0",
+    "css-loader": "^3.5.3",
+    "eslint": "^6.7.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-vue": "^6.2.2",
+    "node-sass": "^4.12.0",
+    "prettier": "^1.19.1",
+    "sass-loader": "^8.0.2",
+    "url-loader": "^4.1.0",
+    "vue-svg-loader": "^0.16.0",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "files": [
+    "dist/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mozilla-it/factor-ui.git"
+  },
+  "author": "Andrew Sunada <batman@mozilla.com>",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/mozilla-it/factor-ui/issues"
+  },
+  "homepage": "https://github.com/mozilla-it/factor-ui#readme",
+  "readme": "https://github.com/mozilla-it/factor-ui#readme",
+  "keywords": [
+    "factor",
+    "ui-design",
+    "components",
+    "templates",
+    "mozilla",
+    "design-system",
+    "js",
+    "css"
+  ]
+}

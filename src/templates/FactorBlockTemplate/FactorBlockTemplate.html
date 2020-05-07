@@ -1,0 +1,24 @@
+<div id="factor-template" class="f-template-outer">
+  <FactorHeader
+    :searchBarHandler="searchBarHandler"
+    :searchBarLabel="searchBarLabel"
+  >
+    <template slot="logo" v-if="hasLogo">
+      <slot name="logo" />
+    </template>
+    <template slot="nav">
+      <slot name="nav" />
+    </template>
+    <template slot="profile">
+      <slot name="profile" />
+    </template>
+  </FactorHeader>
+  <main class="f-main">
+    <slot name="main"></slot>
+  </main>
+  <FactorFooter>
+    <template slot="links">
+      <slot name="footer-links" />
+    </template>
+  </FactorFooter>
+</div>

@@ -1,0 +1,23 @@
+/**
+ * All base/reset styles for factor
+ */
+
+body,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.visually-hidden {
+  display: none;
+  font-size: 16px;
+}
