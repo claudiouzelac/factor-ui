@@ -8,7 +8,7 @@
     "build:web": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vue-cli-service test:unit",
     "build": "npm run build:wc && npm run build:lib",
     "build:wc": "env NODE_FACTOR_WC=true vue-cli-service build --target wc --name factor-components 'src/components/*.vue'",
     "build:lib": "vue-cli-service build --target lib --name factor src/index.js"
@@ -35,6 +35,7 @@
     "prettier": "^1.19.1",
     "sass-loader": "^8.0.2",
     "url-loader": "^4.1.0",
+    "vue-generate-component": "^3.0.1",
     "vue-svg-loader": "^0.16.0",
     "vue-template-compiler": "^2.6.11"
   },

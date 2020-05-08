@@ -1,13 +1,9 @@
-import { mount } from '@vue/test-utils';
-import FactorBlockTemplate from './FactorBlockTemplate.vue';
+import Vue from 'vue';
+import FactorFlowTemplate from './FactorFlowTemplate.vue';
 
 // Here are some Jasmine 2.0 tests, though you can
 // use any test runner / assertion library combo you prefer
-describe('FactorBlockTemplate', () => {
-  it('is a Vue instance', () => {
-    const wrapper = mount(FactorBlockTemplate);
-    expect(wrapper.isVueInstance()).toBeTruthy();
-  });
+describe('FactorFlowTemplate', () => {
   // Inspect the raw component options
   it('has a created hook', () => {
     // expect(typeof FactorblocktemplateComponent.created).toBe('function');
@@ -31,16 +27,3 @@ describe('FactorBlockTemplate', () => {
     // expect(vm.$el.textContent).toBe('bye!');
   });
 });
-
-// import { shallowMount } from '@vue/test-utils';
-// import HelloWorld from '@/components/HelloWorld.vue';
-
-// describe('HelloWorld.vue', () => {
-//   it('renders props.msg when passed', () => {
-//     const msg = 'new message';
-//     const wrapper = shallowMount(HelloWorld, {
-//       propsData: { msg },
-//     });
-//     expect(wrapper.text()).toMatch(msg);
-//   });
-// });

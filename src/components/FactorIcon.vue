@@ -11,31 +11,14 @@
   >
     <template>
       <!-- <component :is="iconPath" /> -->
-      <use
-        :href="
-          '#' +
-            require(`!svg-sprite-loader?extract=false!image-webpack-loader?${`{
-              svgo: {
-                plugins: [
-                  { removeXMLNS: true },
-                  {
-                    removeAttributesBySelector: {
-                      selector: 'svg[class]',
-                      attributes: 'class'
-                    }
-                  },
-                ]
-              }
-            }`.replace(/\n/g, '')}!@/assets/svg/${id}.svg`).default.id
-        "
-      />
+      <use :href="iconHref" />
     </template>
   </svg>
 </template>
 
 <script>
 export default {
-  name: 'Icon',
+  name: 'FactorIcon',
   props: {
     width: Number,
     height: Number,
@@ -53,6 +36,23 @@ export default {
     //   );
     //   return require(`svg-inline-loader?classPrefix=f-i__!@/assets/svg/${this.id}.svg`);
     // },
+    iconHref() {
+      return `#${
+        require(`!svg-sprite-loader?extract=false!image-webpack-loader?${`{
+              svgo: {
+                plugins: [
+                  { removeXMLNS: true },
+                  {
+                    removeAttributesBySelector: {
+                      selector: 'svg[class]',
+                      attributes: 'class'
+                    }
+                  },
+                ]
+              }
+            }`.replace(/\n/g, '')}!@/assets/svg/${this.id}.svg`).default.id
+      }`;
+    },
   },
   methods: {
     handleIconClicked(e) {

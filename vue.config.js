@@ -8,6 +8,7 @@ if (targetIndex !== -1) {
 // vue.config.js
 module.exports = {
   outputDir: buildWC ? 'dist/wc' : 'dist/lib',
+  publicPath: buildWC ? '/components/' : '/',
   css: {
     // extract CSS in components into a single CSS file (only in production)
     // can also be an object of options to pass to extract-text-webpack-plugin

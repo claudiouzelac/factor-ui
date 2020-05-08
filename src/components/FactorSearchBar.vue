@@ -35,7 +35,7 @@
 import FactorIcon from '@/components/FactorIcon.vue';
 
 export default {
-  name: 'SearchBar',
+  name: 'FactorSearchBar',
   props: {
     searchBarHandler: Function,
     searchBarLabel: {
