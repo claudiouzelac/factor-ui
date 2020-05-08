@@ -1,7 +1,13 @@
 const path = require('path');
-
+// console.log('NODE_FACTOR_WC: ', process.env.NODE_FACTOR_WC === true);
+let buildWC = false;
+const targetIndex = process.argv.indexOf('--target');
+if (targetIndex !== -1) {
+  buildWC = process.argv[targetIndex + 1] === 'wc';
+}
 // vue.config.js
 module.exports = {
+  outputDir: buildWC ? 'dist/wc' : 'dist/lib',
   css: {
     // extract CSS in components into a single CSS file (only in production)
     // can also be an object of options to pass to extract-text-webpack-plugin
@@ -54,15 +60,9 @@ module.exports = {
         },
       ],
     },
-    entry: {
-      'templates/template-block-layout': [
-        './src/templates/FactorBlockTemplate/index.vue',
-        './src/templates/FactorBlockTemplate/FactorBlockTemplate.scss',
-      ],
-    },
     output: {
       filename: 'js/[name].js',
-      path: path.resolve(__dirname, 'dist'),
+      // path: path.resolve(__dirname, 'lib'),
     },
     // plugins: [
     //   new MiniCssExtractPlugin({
