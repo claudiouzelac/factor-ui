@@ -1,5 +1,5 @@
 <template>
-  <div id="factor-template" class="f-template-outer">
+  <div id="factor-template" class="f-template-outer flow-template">
     <FactorHeader
       :searchBarHandler="searchBarHandler"
       :searchBarLabel="searchBarLabel"

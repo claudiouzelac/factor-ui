@@ -1,8 +1,8 @@
 <template>
   <header class="f-header">
     <div class="f-header__column">
-      <slot name="logo" />
-      <a class="f-header__logo-link" href="/" v-if="!hasLogoSlot">
+      <slot name="logo" v-if="!noLogo" />
+      <a class="f-header__logo-link" href="/" v-if="!hasLogoSlot && !noLogo">
         <img
           src="https://www.mozilla.org/media/protocol/img/logos/mozilla/black.svg"
           class="f-header__logo"
@@ -45,6 +45,10 @@ export default {
     searchBarLabel: {
       type: String,
       default: '',
+    },
+    noLogo: {
+      type: Boolean,
+      default: false,
     },
   },
   computed: {

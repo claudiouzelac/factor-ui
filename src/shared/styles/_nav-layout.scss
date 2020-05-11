@@ -8,18 +8,38 @@
   flex-direction: column;
 }
 
-.f-main {
-  width: 100%;
-  margin: 0;
+.nav-template {
   display: flex;
   flex-direction: row;
+  width: 100%;
 
   .f-nav {
+    background: var(--white);
     flex: 1;
-  }
+    border-right: 1px solid var(--gray-30);
 
-  & #{&}__content {
-    flex: 10;
+    .f-nav__logo-link {
+      display: block;
+      height: 2em;
+    }
+
+    .f-nav__logo {
+      margin: 1.5em auto;
+      display: block;
+    }
+
+    .f-nav__main {
+      margin-top: 1em;
+    }
+  }
+  .f-main {
+    flex: 9;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+
+    .f-main__content {
+    }
   }
 }
 

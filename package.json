@@ -40,7 +40,8 @@
     "vue-template-compiler": "^2.6.11"
   },
   "files": [
-    "dist/"
+    "dist/",
+    "src/shared/styles"
   ],
   "repository": {
     "type": "git",
