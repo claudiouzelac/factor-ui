@@ -53,6 +53,7 @@ export default {
 </script>
 <style lang="scss">
 @import '../../shared/styles/_base.scss';
+@import '../../shared/styles/_block-layout.scss';
 
 body {
   background: var(--gray-20);

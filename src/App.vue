@@ -1,32 +1,45 @@
 <template>
-  <FactorBlockTemplate
+  <FactorNavTemplate
     :searchBarHandler="searchBarHandler"
     searchBarLabel="Welcome to Factor"
   >
-    <NavExample slot="nav" />
+    <SideNavExample slot="nav" />
     <ProfileExample slot="profile" />
-    <BlockLayoutExample slot="main" />
+    <!-- <BlockLayoutExample slot="main" /> -->
+    <NavLayoutExample slot="main" />
     <FooterLinksExample slot="footer-links" />
-  </FactorBlockTemplate>
+  </FactorNavTemplate>
 </template>
 
 <script>
-import FactorBlockTemplate from './templates/FactorBlockTemplate';
+// import FactorBlockTemplate from './templates/FactorBlockTemplate';
+// import FactorFlowTemplate from './templates/FactorFlowTemplate';
+import FactorNavTemplate from './templates/FactorNavTemplate';
 
 // Importing example components
-import NavExample from '@/examples/NavExample.vue';
+// import NavExample from '@/examples/NavExample.vue';
+import SideNavExample from '@/examples/SideNavExample.vue';
+
 import ProfileExample from '@/examples/ProfileExample.vue';
-import BlockLayoutExample from '@/examples/BlockLayoutExample.vue';
+// import BlockLayoutExample from '@/examples/BlockLayoutExample.vue';
+// import FlowLayoutExample from '@/examples/FlowLayoutExample.vue';
+import NavLayoutExample from '@/examples/NavLayoutExample.vue';
 import FooterLinksExample from '@/examples/FooterLinksExample.vue';
 
 export default {
   name: 'App',
   components: {
-    FactorBlockTemplate,
+    // FactorFlowTemplate,
+    // FactorBlockTemplate,
+    FactorNavTemplate,
+
     // Example components
-    NavExample,
+    // NavExample,
+    SideNavExample,
     ProfileExample,
-    BlockLayoutExample,
+    // BlockLayoutExample,
+    // FlowLayoutExample,
+    NavLayoutExample,
     FooterLinksExample,
   },
   methods: {

@@ -47,7 +47,6 @@ export default {
 .panel {
   border: 4px solid var(--gray-50);
   background: var(--white);
-  margin: 0 0 2em;
   overflow: visible;
   border-radius: var(--cardRadius);
   position: relative;

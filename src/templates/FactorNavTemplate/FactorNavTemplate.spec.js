@@ -1,14 +1,14 @@
 import { mount } from '@vue/test-utils';
-import FactorFlowTemplate from './FactorFlowTemplate.vue';
+import FactorNavTemplate from './FactorNavTemplate.vue';
 
-describe('FactorFlowTemplate', () => {
+describe('FactorNavTemplate', () => {
   it('is a Vue instance', () => {
-    const wrapper = mount(FactorFlowTemplate);
+    const wrapper = mount(FactorNavTemplate);
     expect(wrapper.isVueInstance()).toBeTruthy();
   });
   it('receives searchBarLabel', () => {
     const testText = 'searchBarLabel';
-    const wrapper = mount(FactorFlowTemplate, {
+    const wrapper = mount(FactorNavTemplate, {
       propsData: {
         searchBarLabel: testText,
       },
@@ -18,7 +18,7 @@ describe('FactorFlowTemplate', () => {
 
   it('receives searchBarHandler', () => {
     const testFunc = (value) => value;
-    const wrapper = mount(FactorFlowTemplate, {
+    const wrapper = mount(FactorNavTemplate, {
       propsData: {
         searchBarHandler: testFunc,
       },
@@ -28,7 +28,7 @@ describe('FactorFlowTemplate', () => {
 
   it('receives slot logo', () => {
     const testSrc = `https://www.mozilla.org/media/protocol/img/logos/mozilla/black.svg`;
-    const wrapper = mount(FactorFlowTemplate, {
+    const wrapper = mount(FactorNavTemplate, {
       slots: {
         logo: `<img src='${testSrc}' />`,
       },
@@ -37,7 +37,7 @@ describe('FactorFlowTemplate', () => {
   });
 
   it('receives slot nav', () => {
-    const wrapper = mount(FactorFlowTemplate, {
+    const wrapper = mount(FactorNavTemplate, {
       slots: {
         nav: `<p>nav</p>`,
       },
@@ -46,7 +46,7 @@ describe('FactorFlowTemplate', () => {
   });
 
   it('receives slot profile', () => {
-    const wrapper = mount(FactorFlowTemplate, {
+    const wrapper = mount(FactorNavTemplate, {
       slots: {
         profile: `<p>profile</p>`,
       },
@@ -55,7 +55,7 @@ describe('FactorFlowTemplate', () => {
   });
 
   it('receives slot main', () => {
-    const wrapper = mount(FactorFlowTemplate, {
+    const wrapper = mount(FactorNavTemplate, {
       slots: {
         main: `<p>main</p>`,
       },
@@ -64,7 +64,7 @@ describe('FactorFlowTemplate', () => {
   });
 
   it('receives slot footerLinks', () => {
-    const wrapper = mount(FactorFlowTemplate, {
+    const wrapper = mount(FactorNavTemplate, {
       slots: {
         footerLinks: `<p>footerLinks</p>`,
       },

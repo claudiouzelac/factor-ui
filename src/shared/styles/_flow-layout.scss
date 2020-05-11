@@ -1,0 +1,19 @@
+/**
+ * Styles for Grid Block Layout
+ */
+
+// Grid container
+@mixin flowContainer() {
+  display: flex;
+  flex-direction: column;
+}
+
+.f-main {
+  width: 100%;
+  margin: 3em 0 1em;
+}
+
+// Block layout
+.f-l {
+  @include flowContainer;
+}

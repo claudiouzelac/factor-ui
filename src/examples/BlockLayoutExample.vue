@@ -43,7 +43,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import '../shared/styles/block-layout';
+@import '../shared/styles/_block-layout.scss';
 
 .test-panel-third {
   @include thirdGridWidth(1);

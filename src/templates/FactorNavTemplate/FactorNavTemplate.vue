@@ -7,15 +7,17 @@
       <template slot="logo" v-if="hasLogo">
         <slot name="logo" />
       </template>
-      <template slot="nav">
-        <slot name="nav" />
-      </template>
       <template slot="profile">
         <slot name="profile" />
       </template>
     </FactorHeader>
     <main class="f-main">
-      <slot name="main"></slot>
+      <nav class="f-nav">
+        <slot name="nav" />
+      </nav>
+      <div class="f-main__content">
+        <slot name="main" />
+      </div>
     </main>
     <FactorFooter>
       <template slot="links">
@@ -29,7 +31,7 @@ import FactorHeader from '@/components/FactorHeader.vue';
 import FactorFooter from '@/components/FactorFooter.vue';
 
 export default {
-  name: 'FactorFlowTemplate',
+  name: 'FactorNavTemplate',
   components: {
     FactorHeader,
     FactorFooter,
@@ -53,7 +55,7 @@ export default {
 </script>
 <style lang="scss">
 @import '../../shared/styles/_base.scss';
-@import '../../shared/styles/_flow-layout.scss';
+@import '../../shared/styles/_nav-layout.scss';
 
 body {
   background: var(--gray-20);
