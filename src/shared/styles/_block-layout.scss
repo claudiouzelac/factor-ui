@@ -9,18 +9,23 @@
   grid-gap: 1em;
 }
 
-// Full width panel
+// Full width panel: all columns
 @mixin fullGridWidth() {
   grid-column: 1/6 span;
 }
 
-// Half width panel
+// Major width panel: 4 columns
+@mixin majorGridWidth($start) {
+  grid-column: #{$start}/ calc(#{$start} + 4);
+}
+
+// Half width panel: 3 columns
 @mixin halfGridWidth($start) {
   grid-column-start: $start;
   grid-column-end: calc(#{$start} + 3);
 }
 
-// Third width panel
+// Third width panel: 2 columns
 @mixin thirdGridWidth($start) {
   grid-column-start: $start;
   grid-column-end: calc(#{$start} + 2);
@@ -37,5 +42,37 @@
 
   & #{&}__panel--full {
     @include fullGridWidth;
+  }
+
+  & #{&}__panel--left-major {
+    @include majorGridWidth(1);
+  }
+
+  & #{&}__panel--middle-major {
+    @include majorGridWidth(2);
+  }
+
+  & #{&}__panel--right-major {
+    @include majorGridWidth(3);
+  }
+
+  & #{&}__panel--left-half {
+    @include halfGridWidth(1);
+  }
+
+  & #{&}__panel--right-half {
+    @include halfGridWidth(4);
+  }
+
+  & #{&}__panel--left-third {
+    @include thirdGridWidth(1);
+  }
+
+  & #{&}__panel--middle-third {
+    @include thirdGridWidth(3);
+  }
+
+  & #{&}__panel--right-third {
+    @include thirdGridWidth(5);
   }
 }
