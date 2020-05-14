@@ -16,7 +16,7 @@ npm install --save @mozilla/factor-ui
 
 ## Templates
 
-#### Block template
+#### Include
 
 Include this in whichever VueJS component you wish to use the template.
 
@@ -57,6 +57,8 @@ export default {
 </script>
 ```
 
+This works the same with each of the different templates: FactorBlockTemplate, FactorFlowTemplate, FactorNavTemplate
+
 #### Api
 
 | Property         | Type                      | Description                                                                  |
@@ -66,123 +68,22 @@ export default {
 
 #### Slots
 
-| Name               | Type         | Area                                          |
-| ------------------ | ------------ | --------------------------------------------- |
-| logo (conditional) | HTML Element | Upper left logo                               |
-| nav                | HTML Element | Upper right nav area next to the profile area |
-| profile            | HTML Element | Upper right profile area                      |
-| main               | HTML Element | All content between header and footer         |
-| footer-links       | HTML Element | List of footer links                          |
+| Name         | Type         | Area                                          |
+| ------------ | ------------ | --------------------------------------------- |
+| logo         | HTML Element | Upper left logo                               |
+| nav          | HTML Element | Upper right nav area next to the profile area |
+| profile      | HTML Element | Upper right profile area                      |
+| main         | HTML Element | All content between header and footer         |
+| footer-links | HTML Element | List of footer links                          |
+
+### Block template
+
+![Block Template](./src/assets/template1-layout.jpg)
 
 ### Flow template
 
-Include this in whichever VueJS component you wish to use the template.
-
-In component import
-
-```
-<template>
-  <FactorFlowTemplate>
-    <div slot="nav" >
-      <!-- Nav content -->
-    </div>
-    <div slot="profile">
-      <!-- Profile content -->
-    </div>
-    <div slot="main">
-      <!-- Main content -->
-    </div>
-    <div slot="footer-links">
-      <!-- Links in footer content -->
-    </div>
-  </FactorFlowTemplate>
-</template>
-
-<script>
-import { FactorFlowTemplate } from '@mozilla/factor-ui';
-import '@mozilla/factor-ui/dist/lib/factor.css';
-
-export default {
-  components: {
-    FactorFlowTemplate
-  },
-  data () {
-    return {
-      value: 0
-    }
-  }
-}
-</script>
-```
-
-#### Api
-
-| Property         | Type                      | Description                                                                  |
-| ---------------- | ------------------------- | ---------------------------------------------------------------------------- |
-| searchBarHandler | Function \| (value) => {} | Handler function for whatever is returned in the header search bar on update |
-| searchBarLabel   | String                    | Default placeholder text for the search bar                                  |
-
-#### Slots
-
-| Name               | Type         | Area                                          |
-| ------------------ | ------------ | --------------------------------------------- |
-| logo (conditional) | HTML Element | Upper left logo                               |
-| nav                | HTML Element | Upper right nav area next to the profile area |
-| profile            | HTML Element | Upper right profile area                      |
-| main               | HTML Element | All content between header and footer         |
-| footer-links       | HTML Element | List of footer links                          |
+![Flow Template](./src/assets/template2-layout.jpg)
 
 ### Nav Template
 
-Include this in whichever VueJS component you wish to use the template.
-
-In component import
-
-```
-<template>
-  <FactorNavTemplate>
-    <div slot="nav" >
-      <!-- Nav content -->
-    </div>
-    <div slot="profile">
-      <!-- Profile content -->
-    </div>
-    <div slot="main">
-      <!-- Main content -->
-    </div>
-  </FactorNavTemplate>
-</template>
-
-<script>
-import { FactorNavTemplate } from '@mozilla/factor-ui';
-import '@mozilla/factor-ui/dist/lib/factor.css';
-
-export default {
-  components: {
-    FactorNavTemplate
-  },
-  data () {
-    return {
-      value: 0
-    }
-  }
-}
-</script>
-```
-
-#### Api
-
-| Property         | Type                      | Description                                                                  |
-| ---------------- | ------------------------- | ---------------------------------------------------------------------------- |
-| searchBarHandler | Function \| (value) => {} | Handler function for whatever is returned in the header search bar on update |
-| searchBarLabel   | String                    | Default placeholder text for the search bar                                  |
-
-#### Slots
-
-| Name                      | Type         | Area                                          |
-| ------------------------- | ------------ | --------------------------------------------- |
-| logo (conditional)        | HTML Element | Upper left logo                               |
-| nav                       | HTML Element | Upper right nav area next to the profile area |
-| profile                   | HTML Element | Upper right profile area                      |
-| main                      | HTML Element | All content between header and footer         |
-| footer-links(conditional) | HTML Element | List of footer links                          |
+![Nav Template](./src/assets/template3-layout.jpg)
