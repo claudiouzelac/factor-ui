@@ -14,6 +14,7 @@
         class="f-header__search"
         :searchBarHandler="searchBarHandler"
         :searchBarLabel="searchBarLabel"
+        :searchBarValue="searchBarValue"
         v-if="!hideSearchBar"
       />
     </div>
@@ -43,6 +44,10 @@ export default {
       default: () => {},
     },
     searchBarLabel: {
+      type: String,
+      default: '',
+    },
+    searchBarValue: {
       type: String,
       default: '',
     },

@@ -42,6 +42,10 @@ export default {
       type: String,
       default: '',
     },
+    searchBarValue: {
+      type: String,
+      default: '',
+    },
   },
   components: {
     FactorIcon,
@@ -64,7 +68,7 @@ export default {
   },
   data() {
     return {
-      searchQuery: '',
+      searchQuery: this.searchBarValue,
     };
   },
   mounted() {

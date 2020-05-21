@@ -3,6 +3,7 @@
     <FactorHeader
       :searchBarHandler="searchBarHandler"
       :searchBarLabel="searchBarLabel"
+      :searchBarValue="searchBarValue"
     >
       <template slot="logo" v-if="hasLogo">
         <slot name="logo" />
@@ -40,6 +41,10 @@ export default {
       default: () => {},
     },
     searchBarLabel: {
+      type: String,
+      default: '',
+    },
+    searchBarValue: {
       type: String,
       default: '',
     },
