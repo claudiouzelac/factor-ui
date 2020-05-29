@@ -83,12 +83,16 @@ export default {
         } else if (e.keyCode === 38 && this.focusedSuggestion > 0) {
           e.preventDefault();
           this.focusedSuggestion -= 1;
-        } else if (e.keyCode === 13) {
-          e.preventDefault();
-          this.$emit(
-            'search-bar-dropdown-clicked',
-            this.dropdownItems[this.focusedSuggestion],
-          );
+        } else if (e.keyCode === 13 && this.focusedSuggestion > -1) {
+          if (this.focusedSuggestion > -1) {
+            e.preventDefault();
+            this.$emit(
+              'search-bar-dropdown-clicked',
+              this.dropdownItems[this.focusedSuggestion],
+            );
+          } else if (this.focusedSuggestion == -1) {
+            this.dropdownItems = [];
+          }
         } else if (e.keyCode === 27) {
           e.preventDefault();
           this.dropdownItems = [];
@@ -122,7 +126,9 @@ export default {
       this.searchBarHandler(this.searchQuery);
     },
     handleKeyUp(e) {
-      this.$emit('keyup', e);
+      if (e.keyCode !== 13) {
+        this.$emit('keyup', e);
+      }
     },
     clearQuery() {
       this.searchQuery = '';
@@ -196,17 +202,13 @@ export default {
     appearance: none;
     background-color: var(--white);
     width: 2.5em;
-    padding: 0.5em;
-    margin-right: -1px;
+    padding: 0.1em 0.5em;
+    margin: 0.5em -1px 0.5em 0;
     position: absolute;
     left: 1px;
     top: 1px;
     bottom: 1px;
     transition: background-color 0.2s ease-in-out;
-
-    &:hover {
-      background-color: var(--gray-20);
-    }
 
     img {
       vertical-align: middle;
