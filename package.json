@@ -1,17 +1,17 @@
 {
   "name": "@mozilla/factor-ui",
-  "version": "0.0.5",
+  "version": "0.0.10",
   "description": "Templates and components to guide internal applications designs to Mozilla",
-  "main": "dist/lib/factor.umd.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build:web": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "test": "vue-cli-service test:unit --verbose",
-    "build": "npm run build:wc && npm run build:lib",
+    "build": "npm run build:wc && npm run build:lib:t && npm run build:lib:c",
     "build:wc": "env NODE_FACTOR_WC=true vue-cli-service build --target wc --name factor-components 'src/components/*.vue'",
-    "build:lib": "vue-cli-service build --target lib --name factor src/index.js"
+    "build:lib:c": "vue-cli-service build --target lib --mode components --name components src/components.js",
+    "build:lib:t": "vue-cli-service build --target lib --name factor src/index.js"
   },
   "dependencies": {
     "core-js": "^3.6.4",
@@ -38,6 +38,11 @@
     "vue-generate-component": "^3.0.1",
     "vue-svg-loader": "^0.16.0",
     "vue-template-compiler": "^2.6.11"
+  },
+  "main": "dist/lib/factor.umd.js",
+  "exports": {
+    ".": "./dist/lib/factor.umd.js",
+    "./components": "./dist/lib/components/components.umd.js"
   },
   "files": [
     "dist/",

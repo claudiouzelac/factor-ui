@@ -15,6 +15,10 @@
         :searchBarHandler="searchBarHandler"
         :searchBarLabel="searchBarLabel"
         :searchBarValue="searchBarValue"
+        :searchBarDropdown="searchBarSuggestions"
+        @keyup="searchBarKeyup"
+        v-on:search-bar-dropdown-clicked="searchBarDropdownClicked"
+        v-on:clear-query="searchBarClearQuery"
         v-if="!hideSearchBar"
       />
     </div>
@@ -39,26 +43,62 @@ export default {
       type: Boolean,
       default: false,
     },
-    searchBarHandler: {
-      type: Function,
-      default: () => {},
-    },
-    searchBarLabel: {
-      type: String,
-      default: '',
-    },
-    searchBarValue: {
-      type: String,
-      default: '',
+    searchBarConfig: {
+      type: Object,
+      default: null,
     },
     noLogo: {
       type: Boolean,
       default: false,
     },
   },
+  methods: {
+    searchBarHandler(value) {
+      if (!this.searchBarConfig.handler) {
+        return;
+      }
+      this.searchBarConfig.handler(value);
+    },
+    searchBarKeyup(e) {
+      if (!this.searchBarConfig.onKeyUp) {
+        return;
+      }
+      this.searchBarConfig.onKeyUp(e);
+    },
+    searchBarDropdownClicked(item) {
+      if (!this.searchBarConfig.onDropdownClicked) {
+        return;
+      }
+      this.searchBarConfig.onDropdownClicked(item);
+    },
+    searchBarClearQuery() {
+      if (!this.searchBarConfig.onClearQuery) {
+        return;
+      }
+      this.searchBarConfig.onClearQuery();
+    },
+  },
   computed: {
     hasLogoSlot() {
       return !!this.$slots['logo'];
+    },
+    searchBarLabel() {
+      if (!this.searchBarConfig.label) {
+        return '';
+      }
+      return this.searchBarConfig.label;
+    },
+    searchBarValue() {
+      if (!this.searchBarConfig.value) {
+        return '';
+      }
+      return this.searchBarConfig.value;
+    },
+    searchBarSuggestions() {
+      if (!this.searchBarConfig.suggestions) {
+        return '';
+      }
+      return this.searchBarConfig.suggestions;
     },
   },
 };

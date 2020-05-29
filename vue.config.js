@@ -5,9 +5,18 @@ const targetIndex = process.argv.indexOf('--target');
 if (targetIndex !== -1) {
   buildWC = process.argv[targetIndex + 1] === 'wc';
 }
+const isLibraryComponent = process.env.INTENT === 'components';
+const getOutputDir = () => {
+  if (buildWC) {
+    return 'dist/wc';
+  } else if (isLibraryComponent) {
+    return 'dist/lib/components';
+  }
+  return 'dist/lib';
+};
 // vue.config.js
 module.exports = {
-  outputDir: buildWC ? 'dist/wc' : 'dist/lib',
+  outputDir: getOutputDir(),
   publicPath: buildWC ? '/components/' : '/',
   css: {
     // extract CSS in components into a single CSS file (only in production)
@@ -32,6 +41,10 @@ module.exports = {
     // },
   },
   configureWebpack: {
+    entry: {
+      factor: './src/index.js',
+      components: './src/components.js',
+    },
     resolve: {
       extensions: ['.js', '.vue', '.json'],
       alias: {
