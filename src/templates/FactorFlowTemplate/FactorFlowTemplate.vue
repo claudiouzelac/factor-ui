@@ -1,9 +1,6 @@
 <template>
   <div id="factor-template" class="f-template-outer flow-template">
-    <FactorHeader
-      :searchBarHandler="searchBarHandler"
-      :searchBarLabel="searchBarLabel"
-    >
+    <FactorHeader :searchBarConfig="searchBarConfig">
       <template slot="logo" v-if="hasLogo">
         <slot name="logo" />
       </template>
@@ -35,13 +32,9 @@ export default {
     FactorFooter,
   },
   props: {
-    searchBarHandler: {
-      type: Function,
-      default: () => {},
-    },
-    searchBarLabel: {
-      type: String,
-      default: '',
+    searchBarConfig: {
+      type: Object,
+      default: null,
     },
   },
   computed: {
