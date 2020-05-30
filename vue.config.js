@@ -41,10 +41,6 @@ module.exports = {
     // },
   },
   configureWebpack: {
-    entry: {
-      factor: './src/index.js',
-      components: './src/components.js',
-    },
     resolve: {
       extensions: ['.js', '.vue', '.json'],
       alias: {

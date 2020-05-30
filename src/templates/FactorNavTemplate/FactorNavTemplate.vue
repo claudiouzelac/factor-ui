@@ -13,11 +13,7 @@
       </div>
     </nav>
     <main class="f-main">
-      <FactorHeader
-        :searchBarHandler="searchBarHandler"
-        :searchBarLabel="searchBarLabel"
-        :noLogo="true"
-      >
+      <FactorHeader :searchBarConfig="searchBarConfig" :noLogo="true">
         <template slot="profile">
           <slot name="profile" />
         </template>
@@ -45,13 +41,9 @@ export default {
     FactorFooter,
   },
   props: {
-    searchBarHandler: {
-      type: Function,
-      default: () => {},
-    },
-    searchBarLabel: {
-      type: String,
-      default: '',
+    searchBarConfig: {
+      type: Object,
+      default: null,
     },
   },
   computed: {

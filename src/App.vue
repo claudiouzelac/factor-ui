@@ -1,13 +1,10 @@
 <template>
-  <FactorNavTemplate
-    :searchBarHandler="searchBarHandler"
-    searchBarLabel="Welcome to Factor"
-  >
+  <FactorNavTemplate :searchBarConfig="searchBarConfig">
     <SideNavExample slot="nav" />
     <ProfileExample slot="profile" />
     <!-- <BlockLayoutExample slot="main" /> -->
     <NavLayoutExample slot="main" />
-    <FooterLinksExample slot="footer-links" />
+    <!-- <FooterLinksExample slot="footer-links" /> -->
   </FactorNavTemplate>
 </template>
 
@@ -24,7 +21,7 @@ import ProfileExample from '@/examples/ProfileExample.vue';
 // import BlockLayoutExample from '@/examples/BlockLayoutExample.vue';
 // import FlowLayoutExample from '@/examples/FlowLayoutExample.vue';
 import NavLayoutExample from '@/examples/NavLayoutExample.vue';
-import FooterLinksExample from '@/examples/FooterLinksExample.vue';
+// import FooterLinksExample from '@/examples/FooterLinksExample.vue';
 
 export default {
   name: 'App',
@@ -40,7 +37,16 @@ export default {
     // BlockLayoutExample,
     // FlowLayoutExample,
     NavLayoutExample,
-    FooterLinksExample,
+    // FooterLinksExample,
+  },
+  computed: {
+    searchBarConfig() {
+      return {
+        handler: this.searchBarHandler,
+        label: 'Welcome to AirMozilla',
+        value: '',
+      };
+    },
   },
   methods: {
     searchBarHandler(value) {

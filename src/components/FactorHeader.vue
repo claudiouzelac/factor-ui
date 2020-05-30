@@ -96,7 +96,7 @@ export default {
     },
     searchBarSuggestions() {
       if (!this.searchBarConfig.suggestions) {
-        return '';
+        return [];
       }
       return this.searchBarConfig.suggestions;
     },
